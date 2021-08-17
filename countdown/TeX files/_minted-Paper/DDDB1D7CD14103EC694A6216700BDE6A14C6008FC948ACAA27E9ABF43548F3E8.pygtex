@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}turning the dictionary into a set of split letters, each word as a tuple}
+\PYG{n}{dictionary} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{([}\PYG{n+nb}{tuple}\PYG{p}{(}\PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{word}\PYG{p}{))} \PYG{k}{for} \PYG{n}{word} \PYG{o+ow}{in} \PYG{n}{sowpods}\PYG{p}{])}
+
+\PYG{k}{def} \PYG{n+nf}{solve\PYGZus{}board}\PYG{p}{(}\PYG{n}{vowel\PYGZus{}number}\PYG{p}{,}
+                \PYG{n}{display\PYGZus{}board}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,}
+                \PYG{n}{dictionary}\PYG{o}{=}\PYG{n}{dictionary}\PYG{p}{,}
+                \PYG{n}{vowels}\PYG{o}{=}\PYG{n}{vowels}\PYG{p}{,}
+                \PYG{n}{consonants}\PYG{o}{=}\PYG{n}{consonants}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}creates a countdown board of 9 letters and returns the largest word present\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{n}{board} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{length} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+    \PYG{c+c1}{\PYGZsh{}randomly generates the board}
+    \PYG{n}{board} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{vowels}\PYG{p}{),} \PYG{n}{vowel\PYGZus{}number}\PYG{p}{,} \PYG{n}{replace}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{))}
+    \PYG{n}{board} \PYG{o}{+=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{consonants}\PYG{p}{),} \PYG{l+m+mi}{9} \PYG{o}{\PYGZhy{}} \PYG{n}{vowel\PYGZus{}number}\PYG{p}{,} \PYG{n}{replace}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{))}
+    \PYG{k}{if} \PYG{n}{display\PYGZus{}board} \PYG{o+ow}{is} \PYG{k+kc}{True}\PYG{p}{:}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{board}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{}checks for words that can be created using the board letters,}
+    \PYG{c+c1}{\PYGZsh{}returns the maximum word length possible}
+    \PYG{n}{sorted\PYGZus{}board} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{(}\PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{board}\PYG{p}{))}
+    \PYG{k}{for} \PYG{n}{subset} \PYG{o+ow}{in} \PYG{n}{powerset}\PYG{p}{(}\PYG{n}{sorted\PYGZus{}board}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{subset} \PYG{o+ow}{in} \PYG{n}{dictionary}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{subset}
+    \PYG{k}{return} \PYG{p}{([])}
+\end{Verbatim}

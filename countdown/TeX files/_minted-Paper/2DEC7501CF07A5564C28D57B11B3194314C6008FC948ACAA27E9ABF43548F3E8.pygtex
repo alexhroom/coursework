@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{averages} \PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{):}
+    \PYG{n}{highest} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{50000}\PYG{p}{):}
+        \PYG{n}{highest}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{solve\PYGZus{}board}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)))}
+    \PYG{n}{averages}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{highest}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{highest}\PYG{p}{))}
+\end{Verbatim}

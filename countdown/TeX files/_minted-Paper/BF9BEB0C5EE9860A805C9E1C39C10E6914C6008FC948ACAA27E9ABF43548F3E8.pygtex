@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}sowpods.txt\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}r\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{Words}\PYG{p}{:}
+    \PYG{n}{string} \PYG{o}{=} \PYG{n}{Words}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+    \PYG{n}{sowpods} \PYG{o}{=} \PYG{p}{(}\PYG{n}{string}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{sowpods}\PYG{o}{.}\PYG{n}{remove}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{sowpods} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{sowpods} \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{9}\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{}converts the SOWPODS scrabble dictionary into a set}
+\end{Verbatim}
